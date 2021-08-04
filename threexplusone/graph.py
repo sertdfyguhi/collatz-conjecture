@@ -10,7 +10,7 @@ class Graph:
         single=False,
         text=True,
         auto_text_hiding=True,
-        text_limit=100,
+        text_limit=50,
         fontsize=6,
         figsize=(15, 7.4),
     ) -> None:
@@ -66,7 +66,7 @@ class Graph:
                 self.i += 1
                 self.i2 = 0
 
-        self.nums = []
+        self.nums.clear()
 
     def remove_empty(self):
         if self.single: return

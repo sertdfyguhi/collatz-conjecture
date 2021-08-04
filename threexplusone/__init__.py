@@ -26,7 +26,7 @@ def show(
     text=True,
     fontsize=6,
     auto_text_hiding=True,
-    text_limit=100,
+    text_limit=50,
     nowindow=False,
     outfile=None
 ):
