@@ -2,59 +2,59 @@ import matplotlib.pyplot as _plt
 from .graph import Graph
 
 def _get_num(num):
-	if num % 2 == 0:
-		return num / 2
-	else:
-		return (num * 3) + 1
+    if num % 2 == 0:
+        return num / 2
+    else:
+        return (num * 3) + 1
 
 def _plot(num, graph):
-	graph.add_num(num)
-	n = num
+    graph.add_num(num)
+    n = num
 
-	while n != 1:
-		n = _get_num(n)
-		graph.add_num(n)
+    while n != 1:
+        n = _get_num(n)
+        graph.add_num(n)
 
-	graph.plot()
+    graph.plot()
 
 def show(
-	nums,
-	title='3x+1',
-	plots_in_row=2,
-	figsize=(15, 7.4),
-	single=False,
-	text=True,
-	fontsize=6,
-	auto_text_hiding=True,
-	text_limit=100,
-	nowindow=False,
-	outfile=None
+    nums,
+    title='3x+1',
+    plots_in_row=2,
+    figsize=(15, 7.4),
+    single=False,
+    text=True,
+    fontsize=6,
+    auto_text_hiding=True,
+    text_limit=100,
+    nowindow=False,
+    outfile=None
 ):
-	graph = Graph(
-		title,
-		len(nums) if type(nums) != int else 1,
-		plots_in_row=plots_in_row,
-		single=single,
-		text=text,
-		fontsize=fontsize,
-		figsize=figsize,
-		auto_text_hiding=auto_text_hiding,
-		text_limit=text_limit
-	)
+    graph = Graph(
+        title,
+        len(nums) if type(nums) != int else 1,
+        plots_in_row=plots_in_row,
+        single=single,
+        text=text,
+        fontsize=fontsize,
+        figsize=figsize,
+        auto_text_hiding=auto_text_hiding,
+        text_limit=text_limit
+    )
 
-	if type(nums) == list:
-		for n in nums:
-			_plot(n, graph)
-	else:
-		_plot(nums, graph)
+    if type(nums) == list:
+        for n in nums:
+            _plot(n, graph)
+    else:
+        _plot(nums, graph)
 
-	graph.remove_empty()
+    graph.remove_empty()
 
-	if not graph.single:
-		_plt.tight_layout()
+    if not graph.single:
+        _plt.tight_layout()
 
-	if outfile:
-		_plt.savefig(outfile)
+    if outfile:
+        _plt.savefig(outfile)
 
-	if not nowindow:
-		_plt.show()
+    if not nowindow:
+        _plt.show()
