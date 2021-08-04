@@ -17,15 +17,30 @@ def _plot(num, graph):
 
 	graph.plot()
 
-def show(nums, title='3x+1', plots_in_row=2, figsize=(15, 7.4), single=False, text=True, fontsize=6, nowindow=False, outfile=None):
+def show(
+	nums,
+	title='3x+1',
+	plots_in_row=2,
+	figsize=(15, 7.4),
+	single=False,
+	text=True,
+	fontsize=6,
+	auto_text_hiding=True,
+	text_limit=100,
+	nowindow=False,
+	outfile=None
+):
 	graph = Graph(
 		title,
 		len(nums) if type(nums) != int else 1,
-		plots_in_row,
-		single,
-		text,
-		fontsize,
-		figsize)
+		plots_in_row=plots_in_row,
+		single=single,
+		text=text,
+		fontsize=fontsize,
+		figsize=figsize,
+		auto_text_hiding=auto_text_hiding,
+		text_limit=text_limit
+	)
 
 	if type(nums) == list:
 		for n in nums:

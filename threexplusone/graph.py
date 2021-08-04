@@ -9,6 +9,8 @@ class Graph:
 		plots_in_row=2,
 		single=False,
 		text=True,
+		auto_text_hiding=True,
+		text_limit=100,
 		fontsize=6,
 		figsize=(15, 7.4),
 	) -> None:
@@ -23,6 +25,8 @@ class Graph:
 		self.plots_in_row = plots_in_row
 		self.single = single
 		self.text = text
+		self.auto_text_hiding = auto_text_hiding
+		self.text_limit = text_limit
 		self.fontsize = fontsize
 		self.i = 0
 		self.i2 = 0
@@ -36,6 +40,9 @@ class Graph:
 
 		if self.text:
 			for data in zip(*ln.get_data(), self.nums):
+				if self.auto_text_hiding and len(self.nums) > self.text_limit:
+					break
+
 				ax.text(
 					data[0],
 					data[1],
@@ -47,7 +54,7 @@ class Graph:
 					bbox={
 						'boxstyle': 'round',
 						'ec': ln.get_color(),
-						'fc': (*to_rgb(ln.get_color()), 0.5)
+						'fc': (*to_rgb(ln.get_color()), 0.7)
 					})
 
 		ax.legend()
