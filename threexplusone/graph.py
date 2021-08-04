@@ -10,7 +10,7 @@ def add_text(ax, data, fontsize, color):
         fontsize=fontsize,
         fontweight='semibold',
         ha='center',
-        va='center',
+        va='center_baseline',
         bbox={
             'boxstyle': 'round',
             'ec': color,
