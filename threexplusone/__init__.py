@@ -27,6 +27,7 @@ def show(
     fontsize=6,
     auto_text_hiding=True,
     text_limit=50,
+    highest_text_only=False,
     nowindow=False,
     outfile=None
 ):
@@ -39,7 +40,8 @@ def show(
         fontsize=fontsize,
         figsize=figsize,
         auto_text_hiding=auto_text_hiding,
-        text_limit=text_limit
+        text_limit=text_limit,
+        highest_text_only=highest_text_only
     )
 
     if type(nums) == list:
