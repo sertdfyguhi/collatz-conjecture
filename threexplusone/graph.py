@@ -9,7 +9,7 @@ def add_text(ax, data, fontsize, color):
         str(round(data[2])),
         fontsize=fontsize,
         ha='center',
-        va='center_baseline',
+        va='center',
         bbox={
             'boxstyle': 'round',
             'ec': color,
