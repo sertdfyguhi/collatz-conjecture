@@ -25,7 +25,7 @@ def show(
     single=False,
     text=True,
     textbox_fontsize=6,
-    font_family='Menlo',
+    font_family='normal',
     auto_text_hiding=True,
     text_limit=50,
     highest_text_only=False,
