@@ -27,7 +27,7 @@ class Graph:
         text_limit=50,
         highest_text_only=False,
         textbox_fontsize=6,
-        font_family='normal',
+        font_family='DejaVu Sans',
         figsize=(15, 7.4),
     ) -> None:
         plt.rc('font', family=font_family)
